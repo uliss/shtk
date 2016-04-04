@@ -2,38 +2,40 @@
 #X declare -lib mrpeach;
 #X obj 71 228 udpsend~ 1 512;
 #X obj 71 255 tgl 50 0 empty empty empty 17 7 0 10 -228856 -4034 -1
-0 1;
+1 1;
 #X obj 71 27 loadbang;
 #X obj 292 23 import mrpeach;
 #X msg 71 53 format 16bit \, channels 1 \, info \, connect 255.255.255.255
 8008;
-#X obj 99 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 99 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 129 113 osc~ 440;
 #X obj 254 208 tcpsend;
 #X msg 254 129 connect pi2-1 8001;
-#X obj 254 235 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 254 235 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 274 176 packOSC;
 #X msg 274 153 send /test;
 #X msg 354 153 send /info;
-#X obj 440 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 440 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 440 153 send /dsp \$1;
 #X floatatom 129 86 5 0 0 0 - - -;
 #X obj 129 206 *~;
-#X obj 144 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 144 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 144 137 keyup;
 #X obj 144 161 sel 32;
 #X obj 243 336 morse~;
 #X msg 276 303 msg Shtokhausen Spiral for soloist and short wave receiver
 receiver;
-#X obj 243 303 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 243 303 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X msg 532 153 volume \$1;
 #X obj 535 129 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 10700 1;
+#X msg 532 153 /volume \$1;
+#X obj 243 362 throw~ \$0-out;
+#X obj 25 172 catch~ \$0-out;
 #X connect 0 0 1 0;
 #X connect 2 0 4 0;
 #X connect 4 0 0 0;
@@ -51,8 +53,9 @@ receiver;
 #X connect 17 0 16 1;
 #X connect 18 0 19 0;
 #X connect 19 0 17 0;
-#X connect 20 0 0 0;
+#X connect 20 0 25 0;
 #X connect 21 0 20 1;
 #X connect 22 0 20 0;
-#X connect 23 0 10 0;
-#X connect 24 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 10 0;
+#X connect 26 0 0 0;
