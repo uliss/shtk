@@ -1,0 +1,76 @@
+#N canvas 209 49 897 544 10;
+#X obj 284 193 morse;
+#X obj 284 223 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 306 223 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 329 223 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 313 145 msg this is a test message;
+#X msg 313 119 msg 1 2 3 4 8;
+#X obj 116 127 metro 100;
+#X obj 72 441 *~;
+#X obj 72 277 osc~ 440;
+#X obj 193 424 line~;
+#X obj 207 340 delay 50;
+#X obj 207 320 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 72 221 906.1;
+#X obj 72 194 loadbang;
+#X obj 392 339 delay 50;
+#X obj 392 319 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X msg 167 380 1 1;
+#X msg 207 380 0 1;
+#X msg 352 379 1 1;
+#X msg 392 379 0 1;
+#X obj 690 171 s dot;
+#X obj 745 171 s dash;
+#X obj 167 100 r dot;
+#X obj 252 323 r dot;
+#X obj 437 322 r dash;
+#X obj 745 120 * 3;
+#X msg 690 103 50;
+#X obj 690 74 loadbang;
+#X text 240 283 dot;
+#X text 397 287 dash;
+#X text 516 226 On UNIX and MacOS X systems \, its case-sensitive \,
+on Windows \, its not.;
+#X obj 72 472 outlet~;
+#X obj 284 54 inlet message;
+#X obj 116 56 inlet control;
+#X obj 116 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 3 0;
+#X connect 1 0 11 0;
+#X connect 2 0 15 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 31 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 1;
+#X connect 10 0 17 0;
+#X connect 11 0 10 0;
+#X connect 11 0 16 0;
+#X connect 12 0 8 0;
+#X connect 13 0 12 0;
+#X connect 14 0 19 0;
+#X connect 15 0 14 0;
+#X connect 15 0 18 0;
+#X connect 16 0 9 0;
+#X connect 17 0 9 0;
+#X connect 18 0 9 0;
+#X connect 19 0 9 0;
+#X connect 22 0 6 1;
+#X connect 23 0 10 1;
+#X connect 24 0 14 1;
+#X connect 25 0 21 0;
+#X connect 26 0 20 0;
+#X connect 26 0 25 0;
+#X connect 27 0 26 0;
+#X connect 32 0 0 0;
+#X connect 33 0 34 0;
+#X connect 34 0 6 0;
