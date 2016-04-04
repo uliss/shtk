@@ -5,8 +5,8 @@
 #X msg 99 70 info;
 #X obj 228 132 print;
 #X obj 99 31 r info;
-#X obj 160 34 loadbang;
-#X msg 160 67 buffer 2;
+#X obj 160 31 loadbang;
+#X msg 160 70 buffer 2;
 #X obj 381 31 tcpreceive 8001;
 #X obj 381 59 unpackOSC;
 #X obj 540 112 print unknown osc;
